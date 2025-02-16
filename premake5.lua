@@ -3,11 +3,11 @@ include "msdfgen"
 project "msdf-atlas-gen"
 	kind "StaticLib"
 	language "C++"
-	cppdialect "C++17"
-    staticruntime "off"
+	cppdialect "C++20"
+    staticruntime "on"
 
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("lib/%{cfg.buildcfg}")
+	objdir ("lib-int/%{cfg.buildcfg}")
 
 	files
 	{
